@@ -34,8 +34,13 @@ enum layers {
 #define ADJUST   MO(_ADJUST)
 
 #define CTL_ESC  MT(MOD_LCTL, KC_ESC)
+
 #define CTL_QUOT MT(MOD_RCTL, KC_QUOTE)
 #define CTL_MINS MT(MOD_RCTL, KC_MINUS)
+
+#define CTL_D MT(MOD_LCTL, KC_D)
+#define CTL_K MT(MOD_RCTL, KC_K)
+
 #define ALT_ENT  MT(MOD_LALT, KC_ENT)
 #define RALT_MEN MT(MOD_RALT, KC_APP)
 
@@ -54,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,---------------------------------------------.                              ,---------------------------------------------.
  * | Del    |   Q  |   W  |   E  |   R   |   T   |                              |   Y   |   U   |   I  |   O  |   P  |  Bksp  |
  * |--------+------+------+------+-------+-------|                              |-------+-------+------+------+------+--------|
- * |Ctrl/Esc|   A  |   S  |   D  |LSFT/F |   G   |                              |   H   |RSFT/J |   K  |   L  | ;  : |Ctrl/' "|
+ * |Ctrl/Esc|   A  |   S  |LCTL/D|LSFT/F |   G   |                              |   H   |RSFT/J |RCTL/K|   L  | ;  : |Ctrl/' "|
  * |--------+------+------+------+-------+-------+-------------.  ,-------------+-------+-------+------+------+------+--------|
  * |  Tab   |   Z  |   X  |   C  |   V   |   B   |  {   |Delete|  |F-keys|   }  |   N   |   M   | ,  < | . >  | /  ? |  Del   |
  * `----------------------+------+-------+-------+------+------|  |------+------+-------'-------+------+----------------------'
@@ -63,10 +68,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                        `------------------------------------'  `------------------------------------'
  */
     [_QWERTY] = LAYOUT(
-     KC_DEL , KC_Q, KC_W, KC_E ,  KC_R ,  KC_T ,                                KC_Y ,   KC_U ,  KC_I ,  KC_O,  KC_P ,  KC_BSPC,
-     CTL_ESC, KC_A, KC_S, KC_D ,  LSFT_F, KC_G ,                                KC_H ,   RSFT_J, KC_K ,  KC_L,  KC_SCLN,CTL_QUOT,
-     KC_TAB,  KC_Z, KC_X, KC_C ,  KC_V ,  KC_B ,  KC_LCBR,KC_DEL, FKEYS,KC_RCBR,KC_N ,   KC_M ,  KC_COMM,KC_DOT,KC_SLSH,KC_DEL,
-                          ADJUST, ALT_ENT,KC_LGUI,KC_SPC, NAV ,   SYM  ,KC_SPC ,RALT_MEN,ALT_ENT,KC_RCTL
+     KC_DEL , KC_Q, KC_W, KC_E , KC_R  ,  KC_T ,                                 KC_Y   , KC_U  ,  KC_I ,  KC_O,  KC_P , KC_BSPC,
+     CTL_ESC, KC_A, KC_S, CTL_D, LSFT_F,  KC_G ,                                 KC_H   , RSFT_J, CTL_K ,  KC_L,KC_SCLN,CTL_QUOT,
+     KC_TAB , KC_Z, KC_X, KC_C , KC_V  ,  KC_B , KC_LCBR,KC_DEL, FKEYS ,KC_RCBR, KC_N   , KC_M  ,KC_COMM,KC_DOT,KC_SLSH, KC_DEL ,
+                         ADJUST,ALT_ENT,KC_LGUI, KC_SPC , NAV  , SYM   ,KC_SPC ,RALT_MEN,ALT_ENT,KC_RCTL
     ),
 
 /*
